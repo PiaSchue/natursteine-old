@@ -1,0 +1,967 @@
+/*------------- INHALT ------------------------------------------------------------------------------------------
+
+1. ALLGEMEINES
+1.1 HTML UND BODY ALLGEMEIN, SONSTIGES
+1.2 UNTERNEHMENSFARBEN
+1.3 ÜBERSCHRIFTEN
+1.4 FADE-IN EFFEKT
+1.5 MOBIL VS DESKTOP 
+1.6 LINKS 
+1.7 HOVER-EFFEKTE
+1.7 NAVIGATION (inkl. hover und mobile Version)
+1.8 HEADER
+1.9 IMAGES
+1.10 <hr> TRENNLINIEN
+
+2. SEITENSPEZIFISCHES
+2.1 HOME/LANDING PAGE
+2.2 LEISTUNGEN
+2.3 UNTERNEHMEN
+2.4 KARRIERE
+2.5 KONTAKT
+2.6 FOOTER
+
+----------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------
+1. ALLGEMEINES
+1.1 HTML UND BODY ALLGEMEIN, SONSTIGES
+1.2 UNTERNEHMENSFARBEN
+1.3 ÜBERSCHRIFTEN
+1.4 FADE-IN EFFEKT
+1.5 MOBIL VS DESKTOP 
+1.6 LINKS 
+1.7 HOVER-EFFEKTE
+1.7 NAVIGATION (inkl. hover und mobile Version)
+1.8 HEADER
+1.9 IMAGES
+1.10 <hr> TRENNLINIEN
+-----------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------
+1. ALLGEMEINES
+1.1 HTML UND BODY ALLGEMEIN, SONSTIGES
+1.2 UNTERNEHMENSFARBEN
+1.3 ÜBERSCHRIFTEN
+1.4 FADE-IN EFFEKT
+1.5 MOBIL VS DESKTOP 
+1.6 LINKS 
+1.7 HOVER-EFFEKTE
+1.7 NAVIGATION (inkl. hover und mobile Version)
+1.8 HEADER
+1.9 IMAGES
+1.10 <hr> TRENNLINIEN
+-----------------------------------------------------------------------------------------------------------------*/
+
+/*HTML UND BODY ALLGEMEIN, SONSTIGES------------------------------------------------------------------------------*/
+/*HTML UND BODY ALLGEMEIN*/
+/*Smooth Scroll bei Links innerhalb einer Seite*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*Body allgemein*/
+body {
+  font-family: roboto;
+  font-display: swap;
+  letter-spacing: 0.02rem;
+  color: rgba(52, 73, 94, 1);
+  display: inline;
+  position:relative;
+}
+/*SONSTIGES---------------*/
+/*Anpassung Bootstrap-Card*/
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-title {
+  margin-bottom: 0px;
+}
+
+/*UNTERNEHMENSFARBEN--------------------------------------------------------------------------------------------*/
+.customdarkblue {
+  color: rgba(44, 62, 80, 1);
+}
+
+.bg-customdarkblue {
+  background-color: rgba(44, 62, 80, 1);
+  color:white;
+}
+
+.btn-customdarkblue {
+  background-color: white;
+  color:rgba(44, 62, 80, 1);
+  border-color: rgba(44, 62, 80, 1);
+}
+
+.customdarkbluelight {
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.bg-customdarkbluelight {
+  background-color: rgba(44, 62, 80, 0.5);
+  color:white;
+}
+
+.bg-customdarkbluehalflight {
+  background-color: rgba(44, 62, 80, 0.8);
+  color:white;
+}
+.customblue {
+  color: rgba(92, 151, 191, 1);
+}
+
+.bg-customblue {
+  background-color: rgba(92, 151, 191, 1);
+  color:white;
+}
+
+.customlightblue {
+  color: rgba(228, 241, 254, 1);
+}
+
+.bg-customlightblue {
+  background-color: rgba(228, 241, 254, 0.5);
+  color:rgba(44, 62, 80, 1);
+}
+
+.custom-hover:hover {
+  font-weight: 600;
+  border-bottom: 1px solid #40afa9;
+  transition: all .2s ease-in-out;
+  cursor:default;
+}
+
+/*ÜBERSCHRIFTEN---------------------------------------------------------------------------------------------*/
+/*Überschriften hervorheben*/
+.topic a {
+  position: relative;
+  margin: 15px;
+  padding-top: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(44, 62, 80, 1);
+}
+
+.topic a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 0;
+  background: transparent;
+}
+
+.topic-item:after {
+  transition: width .5s ease, background-color .5s ease, left .5s ease;
+}
+
+.topic-item:hover:after {
+  width: 100%;
+  left: 0;
+  background:  rgba(92, 151, 191, 1);
+}
+
+@media (max-width: 800px) {
+  .topic a:after {
+    display: none;
+  }
+  .topic a {
+    margin: 2px;
+    padding-top: 2px;
+  }  
+}
+
+/*Überschriftengrößen anpassen (responsive)*/
+h1 {
+    font-size: 1.8rem;
+}
+
+/*MIN*/
+@media (min-width: 300px) {
+    h4 {
+        font-size: 1.1rem;
+    }
+}
+@media (min-width: 400px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+@media (min-width: 800px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h4 {
+        font-size: 1.3rem;
+    }
+}
+@media (min-width: 1000px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    h4 {
+        font-size: 1.6rem;
+    }
+    h5 {
+        font-size: 1.2rem;
+    }
+}
+
+/*MAX*/
+@media (max-width: 300px) {
+    h5 {
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 800px) {
+    h5 {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 1000px) {
+    h5 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* FADE-IN EFFEKT-----------------------------------------------------------------------------------------------*/
+/*Fade-In Effekt in Zsmh mit JS (Siehe Footer)*/
+@media (min-width: 800px) {
+  .fadein {
+    opacity: 0;
+    transition: opacity 550ms ease-in;
+  }
+}
+.fadein.appear {
+  opacity: 1;
+}
+
+/*Fade-In Effekt in Zsmh mit JS (Siehe Footer) --- Für 2 Fotos untereinander, da sonst nicht rechtzeitig aktiviert*/
+.fadein2 {
+  opacity: 0;
+  transition: opacity 750ms ease-in;
+}
+.fadein2.appear {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .fadein2-none {
+    opacity: 1;
+  }
+}
+
+/* MOBIL VS DESKTOPANSICHT -------------------------------------------------------------------------------------*/
+/*Text wird nur bei kleinem/großem Screen angezeigt*/
+@media (min-width: 600px) {
+  .smallscreentext {
+    opacity: 0;
+  }
+}
+@media (max-width: 600px) {
+  .largescreentext {
+    opacity: 0;
+  }
+}
+
+.largescreenlink {
+  opacity: 0;
+}
+
+@media (min-width: 1000px) {
+  .largescreenlink {
+    opacity: 1;
+  }
+}
+
+
+/*Bild wird nur bei kleinem/großem Screen angezeigt*/
+/*nur bei kleinem*/
+@media (min-width: 600px) {
+  .smallscreenimg {
+    opacity: 0;
+  }
+}
+/*nur bei kleinem und mittlerem*/
+@media (min-width: 1000px) {
+  .midsmallscreenimg {
+    opacity: 0;
+  }
+}
+/*nur bei mittlerem und großem*/
+@media (max-width: 1000px) {
+  .midlargescreenimg {
+    opacity: 0;
+  }
+}
+/*margin und padding zusätzlich komplett raus + kleinere Schrift, damit nicht so viel Platz geblockt wird*/
+@media (max-width: 1000px) {
+  .midlargescreenimg2 {
+    opacity: 0;
+    font-size: 2px;
+    margin:0px
+    padding:0px;
+  }
+}
+/*nur bei großem*/
+@media (max-width: 1400px) {
+  .largescreenimg {
+    opacity: 0;
+  }
+}
+
+/*LINKS-------------------------------------------------------------------------------------------------------*/
+/*Links anpassen*/
+  /* unvisited link */
+  a:link {
+    color: #536878;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #91aabd ;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color:  #8f9da7;
+  }
+  
+  /* selected link */
+  a:active {
+    color:  #8f9da7;
+  }
+a {
+  color:#536878 ;
+}
+
+/*HOVER-EFFEKTE -------------------------------------------------------------------------------------------------*/
+/*Vergrößerung eines Feldes bei Hover*/
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }
+
+/*Hover-Effekte (überlagernde Farbe mit Schrift)*/
+.img__wrap {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  width: auto;
+}
+
+/*Erstes Wrap-Element (Bild-Effekt bei Hover)*/
+.img__description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 62, 80, 0.5);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  /* transition effect. not necessary */
+  transition: opacity 1s, visibility 1s;
+  
+}
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+  text-align: justify;
+}
+
+/*NAVIGATION ------------------------------------------------------------------------------------------------------*/
+/*Navigationsgröße, -farbe und positionierung*/
+.navbar-light {
+  color: rgba(52, 73, 94, 1);
+}
+#naav {
+  padding: 5px;
+  margin:0px;
+  background-color: white;
+  font-size:1.1rem;
+}
+#naaav {
+margin:0 auto;
+list-style:none;
+}
+
+#naaav li {
+float:left;
+padding-right: 10px;
+padding-left: 10px;
+}
+
+#naaav a {
+display:block;
+text-align:left;
+text-decoration:none; 
+}
+
+.nav-link {
+    padding: 0.1rem 1rem;
+}
+
+/*Hover Navigationselement*/
+#naav .nav-link:hover {
+  color:#536878;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+´/*MOBIL------------------Anpassungen mobile Ansicht der Navigation---------------------------*/
+
+/*Positionierung*/
+@media (max-width:800px) {
+  #naaav a {
+    display:block;
+    text-align:left;
+    text-decoration:none; 
+    padding-left: 40px;
+    }
+  .nav-button  {
+    margin-left: 40px;
+  }
+}
+
+/*Navigations-Items in Mobile Ansicht einrücken, damit sie unter dem Toggler platziert sind*/
+@media (max-width:800px) {
+  #navbarSupportedContent {
+    padding-left: -50px;
+    text-align: left;
+  }
+}
+
+/*für Mobile-Ansicht: keine Nav-Dropdowns zeigen, sondern nur die Links zu den übergeordneten Seiten*/
+@media only screen and (max-device-width: 500px) {
+  .dropdown {  display: none; }
+}
+@media only screen and (min-device-width: 500px) {
+  .ohnedropdown {  display: none; }
+}
+
+@media (min-width: 992px){
+  .navbar li {
+    margin-left : 0.1em;
+    margin-right : 0.1em;
+  }
+}
+
+/*HEADER -------------------------------------------------------------------------------------------------------------*/
+/*Header (AUCH MIT LOGO MÖGLICH)*/
+.head {
+  font-family: roboto;
+  font-size: 1vw;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+  color: rgba(52, 73, 94, 1);
+  display: inline;
+  position:relative;
+  overflow-y: hidden;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  #headtitle {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  #headtitle {
+    font-size: 10px;
+  }
+}
+
+/*IMAGES*/
+/*Kleine Bilder in der Seitenübersicht*/
+.img-design1-ubersicht {
+    opacity: 1;
+}
+.img-design1-ubersicht:hover {
+    opacity: 0.8;
+}
+
+/*Detailbilder*/
+.img-design1 {
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+}
+.img-design2 {
+  width: 100%;
+  height: 35vw;
+  object-fit: cover;
+  padding-bottom: 0.3vw; 
+}
+
+.img-design3 {
+  width: 100%;
+  height: 50vw;
+  object-fit: cover;
+  padding-bottom: 0.3vw; 
+}
+
+@media (min-width: 1000px) {
+  .img-design1 {
+    width: 100%;
+    height: 27vw;
+  }
+  .img-design3 {
+    width: 100%;
+    height: 22vw;
+  }
+  .img-design3 {
+    width: 100%;
+    height: 34vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .img-design1 {
+    width: 100%;
+    height: 24vw;
+  }
+  .img-design2 {
+    width: 100%;
+    height: 18vw;
+    ;
+    max-height:300px;
+  }
+  .img-design3 {
+    width: 100%;
+    height: 24vw;
+    max-height:580px;
+  }
+}
+
+
+.picturecol {
+  margin-bottom: 2rem;
+}
+
+
+
+
+.img-design4 {
+  width: auto;
+  height: 100%;
+  max-height:500px;
+  object-fit: cover;
+}
+
+/*<hr> TRENNLINIEN (genutzt auf mehreren Seiten)------------------------------------------------------------------------*/
+/* <hr> in Cloud-Style, grau */
+hr.style-grey {
+  border: 0;
+  height: 0; /* Firefox... */
+  box-shadow: 0 0 100px 10px rgba(44, 62, 80, 1);
+  margin-bottom: 50px;
+}
+
+hr.style-grey:after {   
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+hr.style-grey-light {
+  border: 0;
+  height: 0; /* Firefox... */
+  box-shadow: 0 0 100px 10px rgba(44, 62, 80, 0.5);
+  margin-bottom: 50px;
+}
+
+hr.style-lightgrey-light {
+  border: 0;
+  height: 0; /* Firefox... */
+  box-shadow: 0 0 60px 10px rgba(44, 62, 80, 0.1);
+  margin-bottom: 150px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------
+2. SEITENSPEZIFISCHES
+2.1 HOME/LANDING PAGE
+2.2 LEISTUNGEN
+2.3 UNTERNEHMEN
+2.4 KARRIERE
+2.5 KONTAKT
+2.6 FOOTER
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/*HOME/LANDING PAGE---------------------------------------------------------------------------------------------------------*/
+/*Home-Seite*/
+
+#headerhome {
+  background: url("../img/a (17)4.jpg");
+  color: #536878;
+  height: 750px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+/*Anpassung des Schriftzuges und dessen Positionierung im Bild-Overlay, inkl. mobile Version*/
+#headerhome h2 {
+  font-weight: 300;
+}
+.intro-centered {
+  margin-top: 500px;
+}
+
+@media screen and (max-width:800px) {
+    #headerhome {
+    background-size: auto 70%;
+    background-position:center top;
+    height:450px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    }
+    #headerhome h2 {
+  font-weight: 200;
+    }
+    .home-intro h4 {
+        margin-top:20px;
+        padding-bottom:40px;
+    }
+    .home-intro h5 {
+        margin-top:20px;
+        padding-bottom:40px;
+    }    
+    hr {
+        display: none;
+    }
+    .intro-centered {
+      margin-top: 200px;
+    }
+}
+
+/* spezifischer <hr> in Cloud-Style, (home) */
+hr.style-home {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 80px 8px rgb(216, 205, 205);
+}
+hr.style-home:after {   
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+/*LEISTUNGEN-------------------------------------------------------------------------------------------------*/
+/*Header*/
+.parallax-material {
+  /* The image used */
+  background-image: url("../img/a (3)b.jpg");
+  opacity: 0.5;
+
+  /* Full height */
+  height: 220px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*UNTERNEHMEN--------------------------------------------------------------------------------------------------*/
+.parallax-schuermann {
+  /* The image used */
+  background-image: url("../img/a (15)smallscreen.jpg");
+  opacity: 0.3;
+
+  /* Full height */
+  height: 250px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 300px;
+}
+
+@media screen and (min-width:900px) {
+  .parallax-schuermann {
+  /* Full height */
+  height: 260px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 500px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .parallax-schuermann {
+  /* The image used */
+  background-image: url("../img/a (15)b.jpg");
+  opacity: 0.3;
+
+  /* Full height */
+  height: 200px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+}
+
+@media screen and (min-width:2000px) {
+  .parallax-schuermann {
+  /* The image used */
+  background-image: url("../img/a (15)b.jpg");
+  opacity: 0.3;
+
+  /* Full height */
+  height: 300px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+}
+
+/*KARRIERE--------------------------------------------------------------------------------------------------*/
+.parallax-arbeit {
+  /* The image used */
+  background-image: url("../img/a (24)b.jpg");
+  opacity: 0.7;
+
+  /* Full height */
+  height: 200px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width:1200px) {
+  .parallax-arbeit {
+    /* The image used */
+    background-image: url("../img/a (24)b.jpg");
+    opacity: 0.7;
+
+    /* Full height */
+    height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width:2000px) {
+  .parallax-arbeit {
+    /* The image used */
+    background-image: url("../img/a (24)b.jpg");
+    opacity: 0.7;
+
+    /* Full height */
+    height: 600px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/*KONTAKT--------------------------------------------------------------------------------------------------*/
+.parallax-kontakt {
+  /* The image used */
+  background-image: url("../img/a (13)b.jpg");
+  opacity: 0.7;
+
+  /* Full height */
+  height: 200px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width:1200px) {
+  .parallax-kontakt {
+    /* The image used */
+    background-image: url("../img/a (13)b.jpg");
+    opacity: 0.7;
+
+    /* Full height */
+    height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width:2000px) {
+  .parallax-kontakt {
+    /* The image used */
+    background-image: url("../img/a (24)b.jpg");
+    opacity: 0.7;
+
+    /* Full height */
+    height: 600px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#googleiframe {
+width:300px;
+height:200px;
+}
+
+@media screen and (min-width: 500px) {
+  #googleiframe {
+    width:460px;
+    height:200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #googleiframe {
+    width:495px;
+    height:200px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #googleiframe {
+    width:520px;
+    height:200px;
+  }
+} 
+
+@media screen and (min-width: 1200px) {
+  #googleiframe {
+    width:550px;
+    height:298px;
+  }
+}
+
+/*FOOTER--------------------------------------------------------------------------------------------------*/
+#footer {
+  font-size:15px;
+  color:grey;
+  background-color: #f6f6f6;
+}
+
+@media screen and (max-width:800px) {
+  #footer {
+      padding-left:0px;
+      padding-right:5px;
+  }
+}
+
+
+/*EVTL LÖSCHEN (aktuell ungenutzt)------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+
+/*Anpassung der Größen von Videos*/
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*CAROUSELS*/
+/*Carousels allgemein*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 50px;
+  outline: grey;
+  background-size: 100%, 100%;
+  border-radius: 10%;
+  border:none;
+  background: lightgray;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.carousel-control-next-icon:after {
+  content: '>';
+  font-size: 75px;
+  color: white;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 75px;
+  color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+position: absolute;
+top: 150px; /* pushes the icon in the middle of the height */
+z-index: 5;
+display: inline-block;
+}
+
+/*Korrektur des NEXT-Carousel-Buttons allgemein, damit er nicht über dem content in anwendungsfelder-carousel-screenshots liegt*/
+.carousel-control-next {
+    right:-20px;
+}
+
+/*Korrektur des NEXT News-Carousel-Buttons, damit Content in der Mitte erscheint*/
+/*mittelgroße screens*/
+@media (min-width: 600px) {
+    #arrow-next-home {
+        right:-100px;
+    }
+}
+/*kleine screens*/
+@media (max-width: 600px) {
+    #arrow-next-home {
+        right:-15px;
+    }
+}
